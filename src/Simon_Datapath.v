@@ -1,7 +1,7 @@
 //==============================================================================
 // Datapath for Simon Project
 //==============================================================================
-module SimonDatapath(
+ module SimonDatapath(
     // External Inputs 
     input clk,
     input level,                  // Live switch, latched on reset
@@ -72,4 +72,4 @@ module SimonDatapath(
         continue = (pbrd_ctr < seq_ctr - 1);
         pattern_leds = led ? read_data : pattern;
     end
-endmodule
+ endmodule
