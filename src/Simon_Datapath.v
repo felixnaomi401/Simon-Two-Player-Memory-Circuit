@@ -48,7 +48,7 @@
             seq_ctr  <= 0;
             pbrd_ctr <= 0;
             lvl      <= level;
-            // Print AFTER assignment, so we see the new value
+            // Prints AFTER assignment, so we see the new value
             $display("[DEBUG] Reset: lvl=%b (should match level=%b), time=%t", lvl, level, $time);
         end else begin
             if (seq_ctr_inc)
@@ -66,7 +66,7 @@
 
    // Combinational Outputs 
     always @(*) begin
-        // Use only the latched mode!
+        // Use only the latched mode
         legal    = (lvl == 1) ? 1'b1 : ((pattern[0] + pattern[1] + pattern[2] + pattern[3]) == 1);
         correct  = (pattern == read_data);
         continue = (pbrd_ctr < seq_ctr - 1);
